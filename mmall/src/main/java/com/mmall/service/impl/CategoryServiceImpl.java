@@ -96,6 +96,7 @@ public class CategoryServiceImpl implements ICategoryService {
         }
         //查找子节点,递归算法一定要有一个退出的条件
         List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
+        // mybatis 如果集合查询没有数据，返回空集合
         for(Category categoryItem : categoryList){
             findChildCategory(categorySet,categoryItem.getId());
         }
