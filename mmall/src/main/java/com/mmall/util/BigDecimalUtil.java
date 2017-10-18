@@ -12,6 +12,12 @@ public class BigDecimalUtil {
     }
 
 
+    /**
+     * 商业计算要用String，防止丢失精度的问题
+     * @param v1
+     * @param v2
+     * @return
+     */
     public static BigDecimal add(double v1,double v2){
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
